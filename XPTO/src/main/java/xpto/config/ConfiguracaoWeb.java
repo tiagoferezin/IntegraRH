@@ -28,7 +28,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
  */
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "br.com.ribeiraoreefshop")
+@ComponentScan(basePackages = "xpto")
 public class ConfiguracaoWeb extends WebMvcConfigurerAdapter {
 
 	@Override

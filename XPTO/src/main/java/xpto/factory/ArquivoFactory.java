@@ -4,10 +4,17 @@
 package xpto.factory;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import xpto.model.entity.Cidade;
 import xpto.model.repositories.CidadeRepositorio;
@@ -22,29 +29,24 @@ public class ArquivoFactory {
 		List<Cidade> retorno = new ArrayList<Cidade>();
 		Cidade cidade = new Cidade();
 
-		String csvArquivo = "cidades.csv";
+		String caminhoCsvArquivo =  "C:\\Program Files\\Apache Software Foundation\\Tomcat 7.0\\wtpwebapps\\luizalabsWS\\WEB-INF\\classes\\funcionarios.txt";
+		
+	
 
 		BufferedReader conteudoCSV = null;
+		
+		
 
 		String linha = "";
 
-		String separador = ",";
+		String separador = ";";
 
-		conteudoCSV = new BufferedReader(new FileReader(csvArquivo));
+		conteudoCSV = new BufferedReader(new FileReader(caminhoCsvArquivo));
 		String[] atributo = null;
 		while ((linha = conteudoCSV.readLine()) != null) {
 
 			atributo = linha.split(separador);
-			// System.out.println(atributo[0]);
-			// System.out.println(atributo[1]);
-			// System.out.println(atributo[2]);
-			// System.out.println(atributo[3]);
-			// System.out.println(atributo[4]);
-			// System.out.println(atributo[5]);
-			// System.out.println(atributo[6]);
-			// System.out.println(atributo[7]);
-			// System.out.println(atributo[8]);
-			// System.out.println(atributo[9]);
+			
 			if (!atributo[0].equals("ibge_id")) {
 
 				cidade = new Cidade();

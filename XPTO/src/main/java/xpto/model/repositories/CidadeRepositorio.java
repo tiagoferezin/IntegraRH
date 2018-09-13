@@ -22,5 +22,8 @@ public interface CidadeRepositorio extends CrudRepository<Cidade, Long> {
 	
 	@Query("SELECT t FROM Cidade t WHERE t.idIBGE = ?")
 	public Cidade getCidadePorIdIBGE(Long idIBGE);
+	
+	@Query("SELECT t FROM Cidade t WHERE t.uf = ?")
+	public List<Cidade> listaCidadesPeloEstado(String uf);
 
 }
